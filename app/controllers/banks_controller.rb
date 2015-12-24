@@ -15,16 +15,16 @@ class BanksController < ApplicationController
   def create
     @bank = Bank.create(bank_params)
     if @bank.save
-      if current_user.is_bank_admin? || current_user.is_cic_admin? && !current_user.user_invitations.present?
-        employee = Employee.new({user_id: current_user.id, employable: @bank})
-        employee.save
-      end
+      #if #current_user.is_bank_admin? || current_user.is_cic_admin? && !current_user.user_invitations.present?
+        #employee = Employee.new({user_id: current_user.id, employable: @bank})
+        #employee.save
+      #end
       flash[:notice] = "Bank Registered Successfully"
-      if current_user.is_bank_admin? 
-        redirect_to bank_path(@bank)
-      else
+      # if current_user.is_bank_admin? 
+      #   redirect_to bank_path(@bank)
+      # else
         redirect_to banks_path
-      end
+      # end
     else
       render :new
     end

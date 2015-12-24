@@ -1,0 +1,36 @@
+<header class="main-header">
+  <a class="logo" href="#">
+    <b>> Inspect</b>
+    DATE
+  </a>
+  <!-- Header Navbar: style can be found in header.less
+  -->
+  <nav class="navbar navbar-static-top" role="navigation">
+    <!-- Sidebar toggle button
+    -->
+    <a class="sidebar-toggle" data-toggle="offcanvas" href="#" role="button">
+      <span class="sr-only">Toggle navigation</span>
+    </a>
+    <!-- Navbar Right Menu
+    -->
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        / <%# if current_user.present? %>
+          <li class="dropdown user user-menu">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <span class="hidden-xs">Welcome</span>
+            </a>
+          </li>
+          <li class="dropdown user user-menu">
+            / <%#= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'dropdown-toggle' %>
+          </li>
+        / <% else %>
+          <li class="dropdown user user-menu">
+            <!-- = link_to 'System Admin', new_user_session_path, class: 'dropdown-toggle'
+            -->
+          </li>
+        / <%# end %>
+      </ul>
+    </div>
+  </nav>
+</header>
